@@ -16,7 +16,7 @@
 
 !SLIDE commandline incremental
 
-    $ sudo gem install rvm
+    $ gem install rvm
 
     $ rvm-install
 
@@ -29,7 +29,7 @@
 
     $ rvm use jruby
 
-    $ gem install ruboto-core #no sudo!
+    $ gem install ruboto-core
 
 
 !SLIDE bullets
