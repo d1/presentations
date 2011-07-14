@@ -47,6 +47,11 @@
     
     $ export PATH=$PATH:${HOME}/Applications/android-sdk/tools/
 
+!SLIDE commandline incremental
+# Do you homebrew?
+
+	$ brew install android-sdk
+
 !SLIDE commandline incremental transition
 #Create a new AVD
     $ android -s create avd -f -n MyApp -t android-8
