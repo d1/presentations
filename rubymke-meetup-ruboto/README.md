@@ -1,6 +1,8 @@
 Ruboto - Ruby on Android
 as presented to the July 18th, 2011 meetup of the [RubyMKE](http://www.meetup.com/RubyMKE/) users group.
 
+See a live version running on heroku [here](http://rubymke-ruboto.heroku.com).
+
 Copyright 2010, 2011 [Jay McGavren](http://jay.mcgavren.com) and Dave Strock.
 
 This presentation uses Scott Chacon's [Showoff](http://github.com/schacon/showoff). 
