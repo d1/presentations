@@ -7,4 +7,4 @@
 # Follow along at home
 
 * Live slides:
-* http://rubymke-ruboto.heroku.com
+* [http://rubymke-ruboto.heroku.com](http://rubymke-ruboto.heroku.com)
