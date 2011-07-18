@@ -1,6 +1,9 @@
 !SLIDE bullets
 
-* Find source for this presentation at: [http://jay.mcgavren.com/presentations](http://jay.mcgavren.com/presentations)
+* Get these slides at:
+[http://github.com/d1/presentations/rubymke-meetup-ruboto](http://github.com/d1/presentations/rubymky-meetup-ruboto)
+
+* Find original sources for this presentation at: [http://jay.mcgavren.com/presentations](http://jay.mcgavren.com/presentations)
 
 !SLIDE smbullets center transition=scrollUp
 #Steal These Slides!
@@ -11,6 +14,3 @@
 
 !SLIDE
 #Questions?
-
-!SLIDE center transition=scrollUp
-#@jaymcgavren

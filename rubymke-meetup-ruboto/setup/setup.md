@@ -73,9 +73,14 @@
     $ ruboto gen app --package com.my.app --path myapp \
     --name MyApp --target android-8 --activity MyActivity
 
-    $ cd myapp
-    
-    $ mate .
+!SLIDE commandline incremental transition=scrollUp
+    $ find -type f myapp
+    myapp/AndroidManifest.xml
+    myapp/assets/scripts/my_activity.rb
+    myapp/assets/scripts/ruboto.rb
+    myapp/Rakefile
+    myapp/src/com/my/app/MyActivity.java
+    ...
 
 !SLIDE commandline incremental
 #Using Rake

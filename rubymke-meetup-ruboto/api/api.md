@@ -8,7 +8,6 @@
 !SLIDE bullets transition=scrollUp
 * Canvas
 * WebView
-* Multimedia
 
 !SLIDE
 #Log
@@ -48,21 +47,6 @@
 !SLIDE center transition=scrollUp
 ![](button.png)
 
-!SLIDE
-#GUI: Text Fields
-    @@@ruby
-    edit = EditText.new(self)
-    edit.text = "Hello!"
-    self.content_view = edit
-!SLIDE center transition=scrollUp
-![](edit_text.png)
-
-!SLIDE
-#GUI: AnalogClock
-    @@@ruby
-    self.content_view = AnalogClock.new(self)
-!SLIDE center transition=scrollUp
-![](analog_clock.png)
 
 !SLIDE
 #Hardware: TouchEvent
@@ -97,77 +81,8 @@
     D/ONTOUCH (  602): Pointer 0: 105.0, 271.0
     D/ONTOUCH (  602): Pointer 0: 90.0, 284.0
     D/ONTOUCH (  602): Pointer 0: 66.0, 295.0
-      
-!SLIDE
-#Hardware: Sensors
-    @@@ruby
-    Sensor::TYPE_ACCELEROMETER
-    Sensor::TYPE_MAGNETIC_FIELD
-    Sensor::TYPE_ORIENTATION
-    #etc...
 
-!SLIDE commandline incremental
-    $ ruboto gen interface android.hardware.SensorEventListener \
-      --name MySensorEventListener
 
-!SLIDE transition=scrollUp
-    @@@java
-    import android.hardware.SensorEventListener;
-    
-    public class MySensorEventListener
-      implements SensorEventListener
-    {
-      public void onSensorChanged(
-        SensorEvent event
-      ) {
-        if (callbackMethods[CB_SENSOR_CHANGED]) {
-          //JRuby calls to invoke
-          //on_sensor_changed()...
-        }
-      }
-    }
-    
-!SLIDE transition=scrollUp
-    @@@ruby
-    class MySensorEventListener
-      def on_sensor_changed(event)
-        values = event.values
-        Log.d "", "x: #{values[0]}, " + 
-          "y: #{values[1]}, " + 
-          "z: #{values[2]}"
-      end
-    end
-!SLIDE transition=scrollUp
-    @@@ruby
-    def on_create(bundle)
-      @sensor_manager = get_system_service(
-        Context::SENSOR_SERVICE
-      )
-      @sensor =
-        @sensor_manager.get_default_sensor(
-          Sensor::TYPE_ACCELEROMETER
-        )
-      @listener = MySensorEventListener.new
-    end
-!SLIDE transition=scrollUp
-    @@@ruby
-    def on_resume
-      @sensor_manager.register_listener(
-        @listener, @sensor,
-        SensorManager::SENSOR_DELAY_UI
-      )
-    end
-    def on_pause
-      @sensor_manager.unregister_listener(
-        @listener, @sensor
-      )
-    end
-!SLIDE commandline incremental
-    $ adb logcat
-    D/        (23667): x: 1.1570, y: 1.2356, z: 9.5712
-    D/        (23667): x: 0.9906, y: 1.2356, z: 9.6399
-    D/        (23667): x: 0.8234, y: 1.2846, z: 9.6399
-    
 !SLIDE
 #Canvas
 
@@ -229,7 +144,7 @@
 #WebView
     @@@ruby
     web = WebView.new(self)
-    web.load_url 'http://phillyemergingtech.com'
+    web.load_url 'http://www.meetup.com/RubyMKE/'
     self.content_view = web
 
 !SLIDE transition=scrollUp
@@ -243,25 +158,4 @@
 !SLIDE center transition=scrollUp
 ![](webview.png)
 
-!SLIDE
-#Multimedia: Audio
-    @@@ruby
-    def on_create(bundle)
-      request_callback CB_PAUSE
-      file = File.new("sdcard/test.mp3")
-      uri = Uri.from_file(file)
-      player = MediaPlayer.create(self, uri)
-      player.start
-    end
-    def on_pause
-      player.stop
-    end
-!SLIDE
-#Multimedia: Video
-    @@@ruby
-    view = VideoView.new(self)
-    view.video_path = "sdcard/test.mp4"
-    self.content_view = view
-    view.start
-!SLIDE center transition=scrollUp
-![](video_view.png)
+
